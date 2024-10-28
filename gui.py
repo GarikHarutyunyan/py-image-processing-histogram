@@ -97,21 +97,6 @@ def on_selection_change(event):
     selected_image = cv2.imread(selected_image_path, cv2.IMREAD_GRAYSCALE)
     apply_transformations(selected_image)
 
-def on_threshold_change(value):
-    global original_image, binary_label
-    if original_image is None:
-        return
-
-    threshold_value = int(value)
-    binary_image = binary_threshold(original_image, threshold=threshold_value)
-    resized_image = resize_image(binary_image)
-    image_rgb = cv2.cvtColor(resized_image, cv2.COLOR_GRAY2RGB)
-    image_pil = Image.fromarray(image_rgb)
-    image_tk = ImageTk.PhotoImage(image_pil)
-
-    binary_label.config(image=image_tk)
-    binary_label.image = image_tk
-
 def on_first_clip_limit_change(_):
     on_first_clahe_change()
 
@@ -155,51 +140,6 @@ def on_second_clahe_change():
 
     second_clahe_label.config(image=image_tk)
     second_clahe_label.image = image_tk
-
-def on_log_change(value):
-    global original_image, log_label
-    if original_image is None:
-        return
-
-    log_value = float(value)
-    binary_image = log_transformation(original_image, log_factor=log_value)
-    resized_image = resize_image(binary_image)
-    image_rgb = cv2.cvtColor(resized_image, cv2.COLOR_GRAY2RGB)
-    image_pil = Image.fromarray(image_rgb)
-    image_tk = ImageTk.PhotoImage(image_pil)
-
-    log_label.config(image=image_tk)
-    log_label.image = image_tk
-
-def on_low_gamma_change(value):
-    global original_image, low_gamma_label
-    if original_image is None:
-        return
-
-    low_gamma = float(value)
-    binary_image = gamma_correction(original_image, gamma=low_gamma)
-    resized_image = resize_image(binary_image)
-    image_rgb = cv2.cvtColor(resized_image, cv2.COLOR_GRAY2RGB)
-    image_pil = Image.fromarray(image_rgb)
-    image_tk = ImageTk.PhotoImage(image_pil)
-
-    low_gamma_label.config(image=image_tk)
-    low_gamma_label.image = image_tk
-
-def on_high_gamma_change(value):
-    global original_image, high_gamma_label
-    if original_image is None:
-        return
-
-    high_gamma = float(value)
-    binary_image = gamma_correction(original_image, gamma=high_gamma)
-    resized_image = resize_image(binary_image)
-    image_rgb = cv2.cvtColor(resized_image, cv2.COLOR_GRAY2RGB)
-    image_pil = Image.fromarray(image_rgb)
-    image_tk = ImageTk.PhotoImage(image_pil)
-
-    high_gamma_label.config(image=image_tk)
-    high_gamma_label.image = image_tk
 
 # Set up the main Tkinter window
 root = tk.Tk()
