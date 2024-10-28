@@ -4,11 +4,8 @@ This project implements histogram transformation techniques using Python, OpenCV
 
 ## Features
 
-- Binary Thresholding
-- Contrast Stretching
-- Negative Image
-- Log Transformation
-- Gamma Correction
+- Histogram Equalization
+- CLAHE
 
 ## Requirements
 
