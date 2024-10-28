@@ -1,13 +1,19 @@
-# Image Transformations Project
+# Py Image Processing Histogram
 
-This project implements histogram transformation techniques using Python, OpenCV, and Tkinter.
+## Overview
+
+**Py Image Processing Histogram** is a Python-based application that allows users to perform various image transformations using histogram equalization and Contrast Limited Adaptive Histogram Equalization (CLAHE). The application provides a graphical user interface (GUI) built with Tkinter, making it easy to visualize the effects of different image processing techniques.
 
 ## Features
 
-- Histogram Equalization
-- CLAHE
+- **Histogram Equalization**: Improve the contrast of images by redistributing the intensity levels.
+- **CLAHE**: Apply adaptive histogram equalization with adjustable clip limit and grid size.
+- **Image Display**: Load and display images from a specified folder.
+- **Dynamic GUI**: Real-time updates of image transformations based on user input.
 
 ## Requirements
+
+To run this project, ensure you have the following installed:
 
 - Python 3.x
 - OpenCV
