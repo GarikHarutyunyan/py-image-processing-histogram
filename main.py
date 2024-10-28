@@ -1,6 +1,3 @@
-import tkinter as tk
-from gui import setup_gui
-
 def main():
     print("Zero")
 
