@@ -53,3 +53,7 @@ To run this project, ensure you have the following installed:
 6. **Usage:**
    ```bash
    python main.py
+
+**Screenshot:**
+
+![Example](/screenshot.png)
